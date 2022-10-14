@@ -204,6 +204,7 @@ html.lock {
   }
 
   .p-images .billy {
+    right: -18px;
     z-index: 10;
     width: 100vw;
   }
