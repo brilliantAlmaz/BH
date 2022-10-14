@@ -58,6 +58,11 @@ gallerySliderPrevBtn.addEventListener('click', function(){
 		gallerySlider.style.transform = `translate(-${(sliderItems.length-1)*galleryItemWidth}px,0)`
 		galleryCount=sliderItems.length-1;
 	}
+	galleryItems.forEach(function(i){
+		i.classList.remove('active');
+	})
+	galleryItems[galleryCount].classList.add('active')
+
 })
 
 
