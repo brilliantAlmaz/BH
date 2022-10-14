@@ -336,7 +336,7 @@ html.lock{
 
 //tips
 .tips {
-	padding:0 0 50px 0;
+	padding:40px 0 50px 0;
 }
 .container {}
 .tips__list{
@@ -659,7 +659,7 @@ html.lock{
 	//background: #252422;
 	width:350px;
 	height:400px;
-	&:hover{
+	&.active{
 		width:400px;
 		img{
 			margin:0;
@@ -727,8 +727,14 @@ html.lock{
 	cursor:pointer;
 	width:50px;
 	height:50px;
-	background: #252422;
+	background: #ccc5b9;
 	border-radius: 50%;
+	img{
+		margin: 10px 0 0 0;
+		padding:5px 10px;
+		transform:rotate(180deg);
+		//filter:invert(1);
+	}
 }
 .bio__arrow-next {
 	cursor:pointer;
@@ -736,6 +742,11 @@ html.lock{
 	height:50px;
 	background: #ccc5b9;
 	border-radius: 50%;
+	img{
+		margin: 10px 0 0 0;
+		padding:5px 10px;
+		//filter:invert(1);
+	}
 }
 .bio__tracker{
 	width:280px;
@@ -807,7 +818,7 @@ html.lock{
 			width:270px;
 			height:270px;
 		}
-		&:hover{
+		&.active{
 			img{
 				margin: 40px 0 0 0;
 				width:270px;

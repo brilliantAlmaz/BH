@@ -1,34 +1,34 @@
 document.addEventListener("DOMContentLoaded", function() {
-  // code...
 
-  let trackerBool=true;
-  const sliderItems =document.querySelectorAll('.bio__slider-item');
-  let galleryItemWidth;
-  let galleryCount=0;
-  init();
-  function init(){
-  	let slider = document.querySelector('.bio__slider');
-  	let sliderItems = document.querySelectorAll('.bio__slider-item');
-  	let sliderWindowSize=0;
-  	sliderItems.forEach(function(i){
-  		if (window.clientWidth <=280)
-  			sliderWindowSize+=i.clientWidth;
-  		else
-  			sliderWindowSize+=i.clientWidth+30;
-  	})
-  	slider.style.width = `${sliderWindowSize+100}px`;
-  	galleryItemWidth = sliderItems[0].clientWidth+30;
-  	slider.style.transform = `translate(-${galleryItemWidth * galleryCount})`
+	let trackerBool=true;
+	const sliderItems =document.querySelectorAll('.bio__slider-item');
+	let galleryItemWidth;
+	let galleryCount=0;
+	init();
+	function init(){
+		let slider = document.querySelector('.bio__slider');
+		let sliderItems = document.querySelectorAll('.bio__slider-item');
+		let sliderWindowSize=0;
+		sliderItems.forEach(function(i){
+			if (window.clientWidth <=280)
+				sliderWindowSize+=i.clientWidth;
+			else
+				sliderWindowSize+=i.clientWidth+30;
+		})
+		slider.style.width = `${sliderWindowSize+100}px`;
+		galleryItemWidth = sliderItems[0].clientWidth+30;
+		slider.style.transform = `translate(-${galleryItemWidth * galleryCount})`
 
-  }
-  window.addEventListener('resize', init);
+	}
+	window.addEventListener('resize', init);
 //gallery
 const gallerySlider = document.querySelector('.bio__slider');
 
 const gallerySliderNextBtn = document.querySelector('.bio__arrow-next')
 const gallerySliderPrevBtn = document.querySelector('.bio__arrow-back')
 const galleryTrackItems = document.querySelectorAll('.bio__track');
-
+const galleryItems = document.querySelectorAll('.bio__slider-item');
+galleryItems[0].classList.add('active')
 let galleryTrackerCount=0;
 
 gallerySliderNextBtn.addEventListener('click', function(){
@@ -43,6 +43,10 @@ gallerySliderNextBtn.addEventListener('click', function(){
 	galleryTrackItems.forEach(function(i){
 		i.classList.remove('active');
 	})
+	galleryItems.forEach(function(i){
+		i.classList.remove('active');
+	})
+	galleryItems[galleryCount].classList.add('active')
 })
 gallerySliderPrevBtn.addEventListener('click', function(){
 	console.log(galleryCount)
@@ -163,4 +167,39 @@ window.addEventListener('scroll',function(){
 		}
 	})
 })
+
+
+
+//header link tranition
+const headerLink = document.querySelectorAll('.header__list a');
+
+headerLink.forEach(function(item,index){
+	//preventDefault(item);
+	item.addEventListener('click',function(){
+		if(index == 0 || index == 3){
+			scrollToTargetAdjusted('main');
+		}
+		else if (index==1||index ==4){
+			scrollToTargetAdjusted('bio');
+		}
+		else if (index==2||index ==5){
+			scrollToTargetAdjusted('tips');
+		}
+		burger.classList.remove('active');
+		document.querySelector('.header__menu-burger').classList.remove('active');
+		document.querySelector('html').classList.remove('lock');
+	})
+
+});
+function scrollToTargetAdjusted(elem){
+	var element = document.getElementById(elem);
+	var headerOffset = 60;
+	var elementPosition = element.getBoundingClientRect().top;
+	var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+	window.scrollTo({
+		top: offsetPosition,
+		behavior: "smooth"
+	});
+}
 });

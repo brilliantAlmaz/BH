@@ -420,7 +420,7 @@ html.lock {
 }
 
 .tips {
-  padding: 0 0 50px 0;
+  padding: 40px 0 50px 0;
 }
 
 .tips__list {
@@ -766,18 +766,18 @@ html.lock {
   width: 350px;
   height: 400px;
 }
-.bio__slider-item:hover {
+.bio__slider-item.active {
   width: 400px;
 }
-.bio__slider-item:hover img {
+.bio__slider-item.active img {
   margin: 0;
   width: 400px;
   height: 400px;
 }
-.bio__slider-item:hover .bio__slider-desc {
+.bio__slider-item.active .bio__slider-desc {
   opacity: 1;
 }
-.bio__slider-item:hover .overflow {
+.bio__slider-item.active .overflow {
   height: 100%;
   background: rgba(37, 36, 34, 0.3764705882);
   top: 0;
@@ -841,8 +841,14 @@ html.lock {
   cursor: pointer;
   width: 50px;
   height: 50px;
-  background: #252422;
+  background: #ccc5b9;
   border-radius: 50%;
+}
+.bio__arrow-back img {
+  margin: 10px 0 0 0;
+  padding: 5px 10px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .bio__arrow-next {
@@ -851,6 +857,10 @@ html.lock {
   height: 50px;
   background: #ccc5b9;
   border-radius: 50%;
+}
+.bio__arrow-next img {
+  margin: 10px 0 0 0;
+  padding: 5px 10px;
 }
 
 .bio__tracker {
@@ -927,17 +937,17 @@ html.lock {
     width: 270px;
     height: 270px;
   }
-  .bio__slider-item:hover img {
+  .bio__slider-item.active img {
     margin: 40px 0 0 0;
     width: 270px;
     height: 270px;
   }
-  .bio__slider-item:hover .bio__slider-desc {
+  .bio__slider-item.active .bio__slider-desc {
     max-width: 260px;
     margin: 0 auto;
     opacity: 1;
   }
-  .bio__slider-item:hover .overflow {
+  .bio__slider-item.active .overflow {
     background: rgba(37, 36, 34, 0.3764705882);
     top: 40px;
   }
