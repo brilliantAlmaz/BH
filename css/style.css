@@ -233,6 +233,7 @@ html.lock {
   color: #fff;
 }
 .header.changeTone .header__link {
+  cursor: pointer;
   color: #fff;
 }
 .header.changeTone .header__burger:after, .header.changeTone .header__burger:before {
@@ -309,6 +310,7 @@ html.lock {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   font-weight: 100;
+  cursor: pointer;
 }
 
 .header__burger {
