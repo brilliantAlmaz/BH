@@ -1,24 +1,27 @@
-let trackerBool=true;
-const sliderItems =document.querySelectorAll('.bio__slider-item');
-let galleryItemWidth;
-let galleryCount=0;
-init();
-function init(){
-	let slider = document.querySelector('.bio__slider');
-	let sliderItems = document.querySelectorAll('.bio__slider-item');
-	let sliderWindowSize=0;
-	sliderItems.forEach(function(i){
-		if (window.clientWidth <=280)
-			sliderWindowSize+=i.clientWidth;
-		else
-			sliderWindowSize+=i.clientWidth+30;
-	})
-	slider.style.width = `${sliderWindowSize+100}px`;
-	galleryItemWidth = sliderItems[0].clientWidth+30;
-	slider.style.transform = `translate(-${galleryItemWidth * galleryCount})`
+document.addEventListener("DOMContentLoaded", function() {
+  // code...
 
-}
-window.addEventListener('resize', init);
+  let trackerBool=true;
+  const sliderItems =document.querySelectorAll('.bio__slider-item');
+  let galleryItemWidth;
+  let galleryCount=0;
+  init();
+  function init(){
+  	let slider = document.querySelector('.bio__slider');
+  	let sliderItems = document.querySelectorAll('.bio__slider-item');
+  	let sliderWindowSize=0;
+  	sliderItems.forEach(function(i){
+  		if (window.clientWidth <=280)
+  			sliderWindowSize+=i.clientWidth;
+  		else
+  			sliderWindowSize+=i.clientWidth+30;
+  	})
+  	slider.style.width = `${sliderWindowSize+100}px`;
+  	galleryItemWidth = sliderItems[0].clientWidth+30;
+  	slider.style.transform = `translate(-${galleryItemWidth * galleryCount})`
+
+  }
+  window.addEventListener('resize', init);
 //gallery
 const gallerySlider = document.querySelector('.bio__slider');
 
@@ -160,3 +163,4 @@ window.addEventListener('scroll',function(){
 		}
 	})
 })
+});
