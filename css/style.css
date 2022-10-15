@@ -75,6 +75,10 @@ html.lock {
   overflow: hidden;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 .wrapper {
   min-height: 100%;
 }
